@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LearnSure - Smart Course Evaluation</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- Top Contact Bar -->
+<div class="top-bar">
+   <span>Email: support@learnsure.com</span>
+  <span>Contact: +91 98765 43210</span>
+</div>
+
+<!-- Navbar -->
+<div class="navbar">
+   <span class="brand">LearnSure</span>
+</div>
+
+<!-- Hero Section -->
+<div class="hero">
+  <h1>Smart Course Evaluation Platform</h1>
+  <p>
+    Analyze course value based on market demand,
+    experience alignment, and cost efficiency.
+  </p>
+</div>
+
+<!-- About Section -->
+<div class="about">
+  <div class="about-text">
+    <h2>About LearnSure</h2>
+    <p>
+      LearnSure is an AI-powered evaluation platform designed to help
+      students and professionals make informed decisions.
+      Our intelligent system analyzes domain relevance,
+      market demand, experience alignment, and cost efficiency
+      to provide reliable course value insights.
+    </p>
+  </div>
+
+  <div class="about-image">
+    <img src="{{ url_for('static', filename='assets/analysis.png') }}" alt="Analytics Illustration">
+  </div>
+</div>
+
+<!-- Key Features Section -->
+<div class="highlights">
+  <h2>Our Key Features</h2>
+
+  <div class="highlight-grid">
+    <div class="highlight-card">
+      <h4>AI-Based Evaluation</h4>
+      <p>Smart prediction using machine learning models.</p>
+    </div>
+
+    <div class="highlight-card">
+      <h4>Market Demand Analysis</h4>
+      <p>Evaluates real-world industry demand trends.</p>
+    </div>
+
+    <div class="highlight-card">
+      <h4>Cost Efficiency Calculation</h4>
+      <p>Analyzes pricing against course duration.</p>
+    </div>
+
+    <div class="highlight-card">
+      <h4>Experience Alignment Check</h4>
+      <p>Matches course difficulty with user background.</p>
+    </div>
+  </div>
+</div>
+<!-- Showcase Images Section -->
+<div class="showcase">
+  <img src="{{ url_for('static', filename='assets/teacher.png') }}" alt="Analytics">
+  <img src="{{ url_for('static', filename='assets/course.png') }}" alt="Learning Platform">
+</div>
+
+
+<!-- Course Evaluation Form Section -->
+<div class="container">
+  <div class="card">
+    <h2>Course Evaluation System</h2>
+
+    <form action="/result" method="POST">
+
+      <label>Course Domain</label>
+      <select name="domain" required>
+        <option>Web Development</option>
+        <option>Data Science</option>
+        <option>AI / ML</option>
+        <option>Finance</option>
+        <option>Commerce</option>
+        <option>Mathematics</option>
+        <option>Biology</option>
+        <option>Marketing</option>
+        <option>Cyber Security</option>
+        <option>UI/UX Design</option>
+      </select>
+
+      <label>Course Fee (₹)</label>
+      <input type="number" name="fee" required>
+
+      <label>Duration (Months)</label>
+      <input type="number" name="duration" required>
+
+      <label>Your Level</label>
+      <select name="level" required>
+        <option>Student</option>
+        <option>Working Professional</option>
+      </select>
+
+      <label>Market Demand</label>
+      <select name="demand" required>
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
+
+      <button type="submit">Evaluate Course</button>
+
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

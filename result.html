@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Evaluation Result - LearnSure</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+  <span class="brand">LearnSure</span>
+</div>
+
+<div class="result-container">
+
+  <div class="result-layout">
+
+    <!-- LEFT SIDE RESULT CARD -->
+    <div class="result-card">
+
+      <h2>Evaluation Result</h2>
+
+      <div class="score-box">
+        <h1>{{ score }}%</h1>
+
+        {% if status == "Worth It" %}
+          <span class="status status-good">Worth It</span>
+        {% else %}
+          <span class="status status-bad">Not Worth It</span>
+        {% endif %}
+      </div>
+
+      <div class="progress-section">
+        {% for k, v in breakdown.items() %}
+          <div class="progress-item">
+            <label>{{ k }}</label>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: {{ v }}%;"></div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="analysis-box">
+        <h3>Evaluation Analysis</h3>
+        <ul>
+          {% for r in reasons %}
+            <li>{{ r }}</li>
+          {% endfor %}
+        </ul>
+        <p class="conclusion">{{ conclusion }}</p>
+      </div>
+
+      <a href="/">
+        <button class="back-btn">Check Another Course</button>
+      </a>
+
+    </div>
+
+    <!-- RIGHT SIDE IMAGE -->
+    <div class="result-image">
+      <img src="{{ url_for('static', filename='assets/result.png') }}" alt="Result Illustration">
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
